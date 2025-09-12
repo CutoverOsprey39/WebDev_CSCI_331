@@ -20,7 +20,7 @@ function isStrongPassword(pw) { // password is pw
             break;
         }
     }
-    // Runs has digit check
+    // Runs digit check
     if (!digitExists) {
         console.log("No good. Password must contain at least one number");
         return false;
