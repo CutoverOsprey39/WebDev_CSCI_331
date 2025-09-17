@@ -7,7 +7,7 @@ function isStrongPassword(pw) { // password is pw
     
     // Checks if the password contains "password" or "1234"
     if (pw.indexOf("password") !== -1 || pw.indexOf("1234") !== -1) {
-        console.log("No good. Password cannot contain 'password' or '1234'");
+        console.log("No good. Password cannot contain 'password' or '1234'.");
         return false;
     }
     
