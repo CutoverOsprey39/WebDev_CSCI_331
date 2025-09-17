@@ -21,7 +21,7 @@ function domLoaded() {
       C_in.value = ""; //Clear C input box
    });
 }
-// TODO: (Part of the above is to write the functions to be executed when the event handlers are invoked.)
+
 
 function convertCtoF(C) { // Farenheit coversion
    return (C * 9/5) + 32;
