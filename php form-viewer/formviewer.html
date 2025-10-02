@@ -1,0 +1,126 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Simulator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1255.0" data-gr-ext-installed="">
+    <h1></h1>
+
+        <div id="example">
+                <input id="fv" type="text" value="form-viewer.php" placeholder="form-viewer.php">
+            </label>
+            <h3>Send with: <span id="method">GET</span></h3>
+            <div id="getOrPost">
+                <input type="radio" name="send_method" id="get" value="GET" checked=""><label for="get">GET</label>
+                <input type="radio" name="send_method" id="post" value="POST"><label for="post">POST</label>
+            </div>
+        </div>
+
+    <h1>Clothing Simulator</h1>
+    <p>Chose your attire for the day!</p>
+
+        <form id="exForm" action="form-viewer.php" method="GET">
+
+        <fieldset><legend>Essentials</legend>
+            
+            <input type="radio" name="extras" id="rb1" value="Hat">
+            <label for="rb1">Hat</label><br>
+            
+            <input type="radio" name="extras" id="rb2" value="Shoes">
+            <label for="rb2">Shoes</label><br>
+
+            <input type="radio" name="extras" id="rb3" value="Sunglasses">
+            <label for="rb3">Sunglasses</label><br>
+
+            <br>
+            
+            <input type="checkbox" name="Shirt" id="cb1">
+            <label for="cb1">Shirt</label><br>
+            
+            <input type="checkbox" name="Pants" id="cb3">
+            <label for="cb3">Pants</label><br>
+
+            <input type="checkbox" name="Underwear" id="cb2">
+            <label for="cb2">Underwear</label><br>
+        </fieldset>
+        <br>
+        <fieldset><legend>Bags and Jewelery</legend>
+            <label for="Bag">Bag:</label>
+            <select name="Bag" id="Bag">
+                <optgroup label="Handbag">
+                    <option value="Grocery plastic bag">Grocery plastic bag</option>
+                    <option value="Leather Bag">Leather bag</option>
+                    <option value="Canvas Tote">Canvas Tote</option>
+                </optgroup>
+                <optgroup label="Backpack">
+                    <option value="Spiderman bag" selected="">Spiderman Backpack</option>
+                    <option value="Jansport">Jansport</option>
+                    <option value="North Face">North Face</option>
+                </optgroup>
+            </select><br><br>
+
+            <label for="Jewelery">Jewelery:</label>
+            <select name="Jewelery[]" id="Jewelery" size="2" multiple="">
+                <option value="Nose-piercing">Nose-piercing</option>
+                <option value="Earrings">Earrings</option>
+                <option value="Belly button ring">Belly button ring</option>
+                <option value="Gold chain">Gold chain</option>
+            </select><br>
+        </fieldset>
+        <br>
+        <fieldset><legend>Other</legend>
+            <input type="text" name="Other" id="" placeholder="Other attire?">            
+            <br>
+
+        </fieldset>
+
+        <br>
+        <input type="submit" value="Dress Me!">        
+        </form>
+
+
+
+    <script>
+        // get the first (and only) form element; get it's value
+        const form = document.querySelector("form");
+
+        // set GET or POST options
+        const radioButtons = document.querySelectorAll('input[name="send_method"]');
+        const method = document.getElementById("method");
+        let selectedValue;
+        const getOrPost = document.getElementById("getOrPost")
+        getOrPost.addEventListener("click", ()=> {
+            radioButtons.forEach(radioButton => {
+                if (radioButton.checked) {
+                    method.innerHTML = radioButton.value;
+                    form.setAttribute("method", radioButton.value)
+                }
+            })
+        })
+        
+        
+
+        // get the input box element
+        const fvbox = document.getElementById("fv");
+        // on input, evaluate task...
+        fvbox.addEventListener("input", handleInput);
+
+        function handleInput() {
+            // if it's there, change form action to input box string
+            if(fvbox.value != ""){
+                form.setAttribute("action", fvbox.value)
+            }
+            else {
+                fvdefault = "form-viewer.php";
+                form.setAttribute("action", fvdefault);
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>
