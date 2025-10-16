@@ -41,14 +41,12 @@
         }
         table {
             width: 100%;
-            border-collapse: collapse;
             margin-top: 20px;
             background-color: #ffffff;
         }
         th, td {
             padding: 12px;
             text-align: left;
-            border: 1px solid #ddd;
         }
         th {
             background-color: #1bb12c;
@@ -88,8 +86,8 @@
         echo "<p class='added'>Adding <strong>$firstname</strong>.</p>";
 
         // DATABASE OPERATIONS:   
-        /*     
-        $servername = "localhost";   // school server
+            
+        /*$servername = "localhost";   // school server
         $username = "user50";        // get this from the email
         $password = "50dato";        // get this from the email 
         $dbname = "db50";            // get this from the email*/
